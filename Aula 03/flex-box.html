@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos Flexbox</title>
+    <style>
+        body{
+            margin: 0;
+        }
+
+    .container{
+        width: 70%;
+        margin: 0 auto;
+        background-color: rgb(56, 17, 73);
+    }               
+
+    .flexbase{
+        width: 400px;
+        height: 150px;
+        background-color: rgb(145, 130, 155);
+        margin: 0 auto;
+        /* Ativando flexbox numa div */
+        display: flex;
+        /*align-itens: center; flex-start, flex-end */
+        align-items: center;
+          /*justify-content: center; flex-start, flex-end */
+          /* Adicionar espaço: space-around, space-between, space-evenly */
+          /* justify-content: center; /* centralizou em relação a vertical*/
+          justify-content: space-evenly;
+
+    }
+
+    .flexbase > span{
+        background-color: rgb(197, 159, 233);
+        border-radius: 4px;
+    }
+    .flex1{
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+
+    .flex2{
+        justify-content: space-evenly;
+    }
+
+    /*Seleciona o 1° span que pe filho de .flex2*/
+    .flex2 span:nth-of-type(1){
+        background-color: rgb(68, 54, 82);
+        /* alinhamento individual em relação ao eixo*/
+        align-self: flex-start;
+        order: 1;
+    }
+
+    .flex2 span:nth-of-type(2){
+        background-color: rgb(189, 152, 206);
+        /* alinhamento individual em relação ao eixo*/
+        align-self: flex-end;
+        order: 3;
+    }
+    .flex3{
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .flex3 span:nth-of-type(1){
+        background-color: rgb(240, 236, 243);
+        flex-basis: 120px;
+        flex-grow: 1;
+    }
+
+    .flex3 span:nth-of-type(2){
+        background-color: rgb(240, 236, 243);
+        flex-basis: 120px;
+        flex-shrink: 10;
+    }
+        
+
+   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- VsCode Emmet -->
+        <!-- table(tr>td*2)*10 -->
+        <div class="flexbase flex1">
+            <span>Texto 1</span>
+            <span>Texto 2</span>
+            <span>Texto 3</span>
+            <span>Texto 4</span>
+        </div>
+
+        <div class="flexbase flex2">
+            <span>Texto 1</span>
+            <span>Texto 2</span>
+            <span>Texto 3</span>
+            <span>Texto 4</span>
+        </div>
+
+        <div class="flexbase flex3">
+            <span>Texto 1</span>
+            <span>Texto 2</span>
+            <span>Texto 3</span>
+            <span>Texto 4</span>
+        </div>
+    </div>
+</body>
+</html>
